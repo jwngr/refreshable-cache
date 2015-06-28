@@ -30,21 +30,21 @@ var cache = new RefreshableCache();
 
 ### Methods
 
-`put(key, value[, duration, refreshInterval])`
+[`put(key, value[, duration, refreshInterval])`](#putkey-value-duration-refreshinterval)
 
-`get(key)`
+[`get(key)`](#getkey)
 
-`del(key)`
+[`del(key)`](#delkey)
 
-`clear()`
+[`clear()`](#clear)
 
-`on(eventName, callback)`
+[`on(eventName, callback)`](#oneventname-callback)
 
-`resetExpiryOnAccess([shouldResetExpiry = true])`
+[`resetExpiryOnAccess([shouldResetExpiry = true])`](#resetexpiryonaccessshouldresetexpiry--true)
 
-`size()`
+[`size()`](#size)
 
-`keys()`
+[`keys()`](#keys)
 
 
 ### `put(key, value[, duration, refreshInterval])`
