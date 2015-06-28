@@ -1,0 +1,40 @@
+{
+  "name": "refreshable-cache",
+  "description": "An in-memory, refreshable cache",
+  "version": "1.0.0",
+  "author": "Jacob Wenger <wenger.jacob@gmail.com>",
+  "homepage": "https://github.com/jwngr/refreshable-cache",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jwngr/refreshable-cache.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jwngr/refreshable-cache/issues"
+  },
+  "license": "MIT",
+  "keywords": [
+    "cache",
+    "refreshable"
+  ],
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "LICENSE",
+    "README.md",
+    "package.json"
+  ],
+  "devDependencies": {
+    "chai": "^2.2.0",
+    "gulp": "^3.8.11",
+    "gulp-eslint": "^0.14.0",
+    "gulp-exit": "0.0.2",
+    "gulp-istanbul": "^0.7.0",
+    "gulp-mocha": "^2.0.1",
+    "run-sequence": "^1.1.1",
+    "sinon": "^1.14.1",
+    "sinon-chai": "^2.7.0"
+  },
+  "scripts": {
+    "test": "gulp test"
+  }
+}
