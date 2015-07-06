@@ -3,8 +3,6 @@
 var chai = require('chai');
 var expect = chai.expect;
 var sinon = require('sinon');
-var RefreshableCache = require('../index.js');
-
 
 chai.use(require('sinon-chai'));
 
@@ -12,7 +10,7 @@ chai.use(require('sinon-chai'));
 describe('node-cache', function() {
   var clock;
   var emittedEvents;
-  var cache = new RefreshableCache();
+  var cache = require('../index.js');
 
   beforeEach(function() {
     // Mock the cache's emit() method to add the emitted events to an emittedEvents array
@@ -37,6 +35,15 @@ describe('node-cache', function() {
     if (cache.emit.restore) {
       cache.emit.restore();
     }
+  });
+
+
+  describe('initialization', function() {
+    it('should re-use the same cache across all instances', function() {
+      var cache2 = require('../index.js');
+      cache.put('key', 'value');
+      expect(cache2.get('key')).to.equal('value');
+    });
   });
 
 

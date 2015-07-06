@@ -187,4 +187,4 @@ function RefreshableCache() {
 
 util.inherits(RefreshableCache, EventEmitter);
 
-module.exports = RefreshableCache;
+module.exports = new RefreshableCache();
