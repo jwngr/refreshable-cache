@@ -21,7 +21,8 @@ $ npm install refreshable-cache --save
 Once installed, a new cache can be created in your Node.js application as follows:
 
 ```js
-var cache = require('refreshable-cache');
+var RefreshableCache = require('refreshable-cache');
+var cache = new RefreshableCache();
 ```
 
 
