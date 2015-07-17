@@ -103,9 +103,9 @@ function RefreshableCache() {
 
     var oldRecord = _cache[key];
 
-    var newRecord = {
-      value: value
-    };
+    // Copy the existing record's timeout and interval onto the new record; just update the record's value
+    var newRecord = oldRecord || {};
+    newRecord.value = value;
 
     if (typeof duration !== 'undefined') {
       if (typeof oldRecord !== 'undefined') {

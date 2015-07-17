@@ -310,6 +310,33 @@ describe('node-cache', function() {
       ]);
     });
 
+    it('should cancel the expiration timeout after deleting a cache key which was overridden without a new specified expiration timeout', function() {
+      cache.put('key', 'value1', 100);
+      clock.tick(5);
+      cache.put('key', 'value2');
+      cache.del('key');
+      clock.tick(95);
+      expect(emittedEvents).to.deep.equal([]);
+    });
+
+    it('should cancel the refresh interval after deleting a cache key which was overridden without a new specified refresh interval', function() {
+      cache.put('key', 'value1', undefined, 10);
+      clock.tick(5);
+      cache.put('key', 'value2');
+      cache.del('key');
+      clock.tick(5);
+      expect(emittedEvents).to.deep.equal([]);
+    });
+
+    it('should cancel the expiration timeout and refresh interval after deleting a cache key which was overridden without a new specified refresh interval', function() {
+      cache.put('key', 'value1', 100, 10);
+      clock.tick(5);
+      cache.put('key', 'value2');
+      cache.del('key');
+      clock.tick(95);
+      expect(emittedEvents).to.deep.equal([]);
+    });
+
     it('should return the cached value', function() {
       expect(cache.put('key', 'value')).to.equal('value');
     });
