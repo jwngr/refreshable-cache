@@ -1,7 +1,7 @@
 {
   "name": "refreshable-cache",
   "description": "An in-memory, refreshable cache",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Jacob Wenger <wenger.jacob@gmail.com>",
   "homepage": "https://github.com/jwngr/refreshable-cache",
   "repository": {
@@ -23,6 +23,9 @@
     "README.md",
     "package.json"
   ],
+  "dependencies": {
+    "inherits": "~2.0.1"
+  },
   "devDependencies": {
     "chai": "^2.2.0",
     "gulp": "^3.8.11",
@@ -36,8 +39,5 @@
   },
   "scripts": {
     "test": "gulp test"
-  },
-  "dependencies": {
-    "inherits": "~2.0.1"
   }
 }
