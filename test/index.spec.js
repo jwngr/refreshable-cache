@@ -328,7 +328,7 @@ describe('node-cache', function() {
       expect(emittedEvents).to.deep.equal([]);
     });
 
-    it('should cancel the expiration timeout and refresh interval after deleting a cache key which was overridden without a new specified refresh interval', function() {
+    it('should cancel the expiration timeout and refresh interval after deleting a cache key which was overridden without a new specified expiration timeout or refresh interval', function() {
       cache.put('key', 'value1', 100, 10);
       clock.tick(5);
       cache.put('key', 'value2');
