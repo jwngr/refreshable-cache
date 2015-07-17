@@ -1,7 +1,7 @@
 'use strict';
 
 var EventEmitter = require('events').EventEmitter;
-var util = require('util');
+var inherits = require('inherits');
 
 
 function RefreshableCache() {
@@ -185,6 +185,6 @@ function RefreshableCache() {
   };
 }
 
-util.inherits(RefreshableCache, EventEmitter);
+inherits(RefreshableCache, EventEmitter);
 
 module.exports = RefreshableCache;
